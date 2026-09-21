@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-dark);
+  background-position: right -50px center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: flex;
+  align-items: center;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff4d4d, transparent);
+  box-shadow: 0 0 20px #ef4444, 0 0 35px #dc2626, 0 0 8px #ffffff;
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0a0a0c 0%, rgba(10, 10, 12, 0.95) 35%, rgba(10, 10, 12, 0) 55%);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.content {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandLogo {
+  font-family: 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.brandWhite {
+  color: #ffffff;
+}
+
+.brandRed {
+  background: linear-gradient(180deg, #ff4d4d 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ef4444;
+  text-shadow: 0 0 15px var(--red-glow);
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #ef4444;
+  text-shadow: 0 0 15px var(--red-glow);
+}
+
+@media (max-width: 768px) {
+  .section {
+    background-position: 80% center;
+    background-size: cover;
+    align-items: center;
+  }
+  
+  .overlay {
+    background: rgba(10, 10, 12, 0.85);
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .brandLogo {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,90 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.helperText {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.leadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: var(--red-primary);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.3);
+}
+
+.phoneGroup {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+.phoneGroup:focus-within {
+  border-color: var(--red-primary);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.3);
+}
+
+.countryCode {
+  display: flex;
+  align-items: center;
+  padding: 0 0.85rem;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-right: 1px solid #e5e7eb;
+}
+
+.phoneInput {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.ctaButton {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--red-glow);
+  transition: all 0.2s ease-in-out;
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6);
+}
