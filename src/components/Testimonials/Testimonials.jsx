@@ -3,6 +3,7 @@ import { testimonialData } from './testimonialData';
 import styles from './Testimonials.module.css';
 
 export function Testimonials() {
+  // Separa 3 para cima e 2 para baixo
   const topRow = testimonialData.slice(0, 3);
   const bottomRow = testimonialData.slice(3, 5);
 
@@ -20,7 +21,6 @@ export function Testimonials() {
             </div>
             <span>+ 51 mil alunos</span>
           </div>
-
           <h2 className={styles.title}>
             O que aconteceu com quem seguiu o <span className={styles.highlight}>Curso completo de Inglês da Fábrica de Fluentes</span>
           </h2>
@@ -50,18 +50,16 @@ export function Testimonials() {
             DESBLOQUEAR OFERTAS SECRETAS
           </button>
         </div>
-
       </div>
     </section>
   );
 }
 
-
 function TestimonialCard({ item }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={() => !isPlaying && setIsPlaying(true)}>
       {isPlaying ? (
         <div className={styles.videoActiveWrapper}>
           <iframe
@@ -74,20 +72,30 @@ function TestimonialCard({ item }) {
         </div>
       ) : (
         <>
+          {/* Lado Esquerdo: Texto formatado e Nome */}
           <div className={styles.cardContent}>
-            <span className={styles.quoteIcon}>“</span>
-            <p className={styles.cardText}>{item.text}</p>
-            <div className={styles.authorBox}>{item.name}</div>
+            <span className={styles.quoteIcon}>❝</span>
+            <p 
+              className={styles.cardText} 
+              dangerouslySetInnerHTML={{ __html: item.text }} 
+            />
+            <div className={styles.authorBox}>
+              <span className={styles.authorStar}>✦</span>
+              {item.name}
+            </div>
           </div>
+          
+          {/* Lado Direito: Imagem e Botão posicionado na divisória */}
+          <div className={styles.mediaContainer}>
+            <div className={styles.videoWrapper}>
+              <img src={item.image} alt={item.name} className={styles.thumbnail} />
+            </div>
 
-          <div className={styles.videoWrapper} onClick={() => setIsPlaying(true)}>
-            <img src={item.image} alt={item.name} className={styles.thumbnail} />
-            <div className={styles.playButton}>
-              <div className={styles.playIcon}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
+            {/* O botão de play fica na borda esquerda do mediaContainer */}
+            <div className={styles.centerPlayButton}>
+              <svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M5 3l14 9-14 9V3z" />
+              </svg>
             </div>
           </div>
         </>
