@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   background: linear-gradient(135deg, #0d0d10 0%, #0a0a0c 100%);
-  /* ZERADO em cima e em baixo para a imagem poder encostar nas pontas da secção */
   padding: 0 1.5rem; 
   display: flex;
   flex-direction: column;
@@ -17,13 +16,12 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: stretch; /* Garante que a div da foto e do texto tenham a mesma altura */
+  align-items: stretch; 
   justify-content: space-between;
   gap: 2rem;
   min-height: 450px;
 }
 
-/* Lado Esquerdo (Textos) */
 .content {
   flex: 1;
   display: flex;
@@ -31,7 +29,6 @@
   justify-content: center;
   gap: 1.5rem;
   max-width: 520px;
-  /* Transferimos o respiro da secção para o texto, assim ele não cola nas bordas */
   padding-top: 4rem; 
   padding-bottom: 4rem;
   z-index: 2;
@@ -88,15 +85,11 @@
   box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
 }
 
-/* =========================================
-   IMAGEM DE TOPO A FUNDO (DESKTOP)
-========================================= */
 .imageBackground {
   position: relative;
   flex: 1.2; 
-  background-position: center bottom; /* Mantém preso na base */
+  background-position: center bottom; 
   background-repeat: no-repeat;
-  /* No desktop: preenche 100% da altura e auto na largura */
   background-size: auto 100%; 
   z-index: 1;
 }
@@ -113,7 +106,6 @@
   pointer-events: none;
 }
 
-/* Responsividade para Telas Menores */
 @media (max-width: 968px) {
   .section {
     padding: 0 1.5rem;
@@ -123,7 +115,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: auto; /* Remove a altura mínima gigante no mobile */
+    min-height: auto; 
   }
 
   .content {
@@ -143,10 +135,8 @@
 
   .imageBackground {
     width: 100%;
-    /* Reduzimos a altura da caixa para não sobrar espaço vazio em cima */
     min-height: 320px; 
     background-size: contain; 
-    /* Puxa a imagem para cima, colando a cabeça no botão */
     margin-top: -1.5rem; 
   }
 }

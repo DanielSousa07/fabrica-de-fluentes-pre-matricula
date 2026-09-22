@@ -3,7 +3,6 @@ import { testimonialData } from './testimonialData';
 import styles from './Testimonials.module.css';
 
 export function Testimonials() {
-  // Separa 3 para cima e 2 para baixo
   const topRow = testimonialData.slice(0, 3);
   const bottomRow = testimonialData.slice(3, 5);
 
@@ -11,7 +10,6 @@ export function Testimonials() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        {/* Cabeçalho */}
         <div className={styles.header}>
           <div className={styles.studentBadge}>
             <div className={styles.badgeAvatars}>
@@ -26,21 +24,18 @@ export function Testimonials() {
           </h2>
         </div>
 
-        {/* Linha Superior (3 cards) */}
         <div className={styles.grid}>
           {topRow.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
-        {/* Linha Inferior (2 cards centralizados) */}
         <div className={styles.gridBottom}>
           {bottomRow.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
-        {/* Rodapé com CTA */}
         <div className={styles.footerCta}>
           <p className={styles.ctaHelper}>Toque no botão abaixo para fazer sua pré-matrícula</p>
           <button 
@@ -72,7 +67,6 @@ function TestimonialCard({ item }) {
         </div>
       ) : (
         <>
-          {/* Lado Esquerdo: Texto formatado e Nome */}
           <div className={styles.cardContent}>
             <span className={styles.quoteIcon}>❝</span>
             <p 
@@ -85,13 +79,11 @@ function TestimonialCard({ item }) {
             </div>
           </div>
           
-          {/* Lado Direito: Imagem e Botão posicionado na divisória */}
           <div className={styles.mediaContainer}>
             <div className={styles.videoWrapper}>
               <img src={item.image} alt={item.name} className={styles.thumbnail} />
             </div>
 
-            {/* O botão de play fica na borda esquerda do mediaContainer */}
             <div className={styles.centerPlayButton}>
               <svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5 3l14 9-14 9V3z" />

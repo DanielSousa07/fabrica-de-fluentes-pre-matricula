@@ -6,7 +6,6 @@ export function Instructor() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        {/* Lado Esquerdo: Textos e Biografia */}
         <div className={styles.content}>
           <h2 className={styles.title}>
             Quem vai <span className={styles.highlight}>te guiar</span> nessa Jornada?
@@ -34,7 +33,6 @@ export function Instructor() {
           </div>
         </div>
 
-        {/* Lado Direito: Imagem como Background (Incopiável e Presa no Container) */}
         <div 
           className={styles.imageBackground}
           style={{ backgroundImage: `url(${instructorImg})` }}

@@ -18,10 +18,8 @@ export function ComparisonSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        {/* Bloco Esquerdo: Comparativo de Vantagens */}
         <div className={styles.comparisonCard}>
           
-          {/* Sem a Oferta */}
           <div className={styles.badSection}>
             <h3 className={styles.badTitle}>
               SEU INGLÊS <span>SEM A OFERTA EXCLUSIVA</span> DO CURSO COMPLETO DE INGLÊS DA FÁBRICA DE FLUENTES
@@ -48,7 +46,6 @@ export function ComparisonSection() {
 
           <div className={styles.divider} />
 
-          {/* Com a Oferta */}
           <div className={styles.goodSection}>
             <h3 className={styles.goodTitle}>
               SEU INGLÊS <span>COM A OFERTA EXCLUSIVA</span> DO CURSO COMPLETO DE INGLÊS DA FÁBRICA DE FLUENTES
@@ -75,7 +72,6 @@ export function ComparisonSection() {
 
         </div>
 
-        {/* Bloco Direito: Formulário com Fundo Branco e Borda em Vermelho Neon */}
         <div className={styles.formCardWrapper}>
           <div className={styles.formCard}>
             <div className={styles.formHeader}>
