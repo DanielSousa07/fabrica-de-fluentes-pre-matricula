@@ -94,7 +94,17 @@
   }
   
   .overlay {
-    background: linear-gradient(180deg, rgba(10, 10, 12, 0.98) 0%, rgba(10, 10, 12, 0.85) 45%, rgba(10, 10, 12, 0) 85%);
+    /* Degradê matemático: 
+       1. Fica 100% sólido/escuro do topo até faltar 500px para o final (cobrindo a linha de corte)
+       2. Esfuma suavemente até ficar transparente faltando 250px (mostrando o rosto)
+       3. Volta a escurecer um pouco no final (100%) para dar acabamento */
+    background: linear-gradient(
+      to bottom, 
+      rgba(10, 10, 12, 1) 0%, 
+      rgba(10, 10, 12, 1) calc(100% - 500px), 
+      rgba(10, 10, 12, 0) calc(100% - 250px), 
+      rgba(10, 10, 12, 0.9) 100%
+    );
   }
 
   .container {
@@ -108,11 +118,11 @@
   .brandLogo {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    justify-content: center; 
+    justify-content: center;
   }
   
   .title {
     font-size: 1.6rem;
-    text-align: center; 
+    text-align: center;
   }
 }

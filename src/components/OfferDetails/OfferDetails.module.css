@@ -1,0 +1,271 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-dark);
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.smallLogo {
+  height: 40px;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #ef4444;
+  text-shadow: 0 0 15px var(--red-glow);
+}
+
+/* =========================================
+   GRIDS (3 em cima, 2 no meio)
+========================================= */
+.gridTop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.gridMiddle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 850px; /* Mantém os dois centrais simétricos */
+}
+
+.bonusWrapper {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* =========================================
+   ESTILO BASE DOS CARTÕES
+========================================= */
+.card {
+  background: linear-gradient(180deg, #121216 0%, #0a0a0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Fundo preto e proporção 4:3 para renderizar mockups sem cortes */
+.imageWrapper {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; 
+  background-color: #000000;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageFallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f1f25 0%, #121216 100%);
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cardContent {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Título com suporte a formatação Strong Vermelha */
+.cardTitle {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.cardTitle strong {
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.cardDesc {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =========================================
+   CARTÃO HORIZONTAL (BÔNUS)
+========================================= */
+.cardHorizontal {
+  flex-direction: row;
+  align-items: stretch;
+  border-left: 4px solid #ef4444;
+  box-shadow: -5px 0 20px rgba(239, 68, 68, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cardHorizontal .imageWrapper {
+  width: 45%;
+  aspect-ratio: auto;
+  border-bottom: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardHorizontal .cardContent {
+  padding: 3rem 2.5rem;
+  justify-content: center;
+}
+
+.cardHorizontal .cardTitle {
+  font-size: 1.4rem;
+}
+
+/* =========================================
+   BOTÃO CTA E RESPONSIVIDADE
+========================================= */
+.footerCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.ctaHelper {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.ctaButton {
+  padding: 1.125rem 3rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--red-glow);
+  transition: all 0.2s ease-in-out;
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .gridTop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .gridTop, .gridMiddle {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHorizontal {
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 4px solid #ef4444; 
+  }
+
+  .cardHorizontal .cardContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .cardHorizontal .imageWrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
