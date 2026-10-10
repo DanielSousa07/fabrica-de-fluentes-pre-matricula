@@ -7,13 +7,23 @@ export function FeedbackModal({ feedback, successTitle, onClose }) {
 
   useEffect(() => {
     if (!feedback) return;
+    const previouslyFocused = document.activeElement;
     buttonRef.current?.focus();
-    const handleKey = (e) => e.key === 'Escape' && onClose();
+
+    const handleKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      // O botão é o único elemento focável do modal: mantém o foco nele.
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        buttonRef.current?.focus();
+      }
+    };
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
+      previouslyFocused?.focus?.({ preventScroll: true });
     };
   }, [feedback, onClose]);
 
@@ -29,6 +39,7 @@ export function FeedbackModal({ feedback, successTitle, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="feedback-title"
+        aria-describedby="feedback-text"
         onClick={(e) => e.stopPropagation()}
       >
         <div className={isSuccess ? styles.iconSuccess : styles.iconError}>
@@ -47,7 +58,7 @@ export function FeedbackModal({ feedback, successTitle, onClose }) {
           {isSuccess ? successTitle : 'Ops! Algo deu errado'}
         </h3>
 
-        <p className={styles.text}>
+        <p id="feedback-text" className={styles.text}>
           {isSuccess ? (
             <>
               {firstName ? <>Obrigado, <strong>{firstName}</strong>! </> : 'Obrigado! '}
