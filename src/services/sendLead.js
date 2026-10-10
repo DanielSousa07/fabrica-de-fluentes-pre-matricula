@@ -1,4 +1,4 @@
-const LEAD_EMAIL = 'felipemacedo300@gmail.com';
+const LEAD_EMAIL = 'felipemacedo3000@gmail.com';
 
 export async function sendLead({ name, email, phone }, origem) {
   const response = await fetch(`https://formsubmit.co/ajax/${LEAD_EMAIL}`, {
