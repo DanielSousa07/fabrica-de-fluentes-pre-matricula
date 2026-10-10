@@ -64,9 +64,6 @@
 }
 
 .brandRed {
-  background: linear-gradient(180deg, var(--red-400) 0%, var(--red-600) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: var(--red-500);
   text-shadow: 0 0 15px var(--red-glow);
 }

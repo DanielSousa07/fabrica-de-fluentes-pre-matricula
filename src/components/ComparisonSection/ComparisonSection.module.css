@@ -142,10 +142,10 @@
 }
 
 .logoText {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 800;
   letter-spacing: 1px;
+  text-transform: uppercase;
   color: var(--surface-0);
 }
 

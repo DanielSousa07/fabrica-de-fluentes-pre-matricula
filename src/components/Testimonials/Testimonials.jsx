@@ -69,7 +69,9 @@ function TestimonialCard({ item }) {
       ) : (
         <>
           <div className={styles.cardContent}>
-            <span className={styles.quoteIcon} aria-hidden="true">❝</span>
+            <svg className={styles.quoteIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M9.6 5C5.9 6.4 3.5 9.6 3.5 13.7V19h6.6v-6.6H7c0-2.4 1.3-4.3 3.6-5.3L9.6 5zm10 0c-3.7 1.4-6.1 4.6-6.1 8.7V19h6.6v-6.6H17c0-2.4 1.3-4.3 3.6-5.3L19.6 5z" />
+            </svg>
             <p 
               className={styles.cardText} 
               dangerouslySetInnerHTML={{ __html: item.text }} 
