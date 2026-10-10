@@ -10,12 +10,12 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.95rem;
-  color: #d1d5db;
+  color: var(--gray-300);
 }
 
 .icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #dc2626;
+  color: var(--red-600);
   flex-shrink: 0;
 }

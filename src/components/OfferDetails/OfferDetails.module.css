@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgb(var(--white-rgb) / 0.05);
 }
 
 .container {
@@ -36,12 +36,12 @@
 .title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--white);
   line-height: 1.3;
 }
 
 .highlight {
-  color: #ef4444;
+  color: var(--red-500);
   text-shadow: 0 0 15px var(--red-glow);
 }
 
@@ -66,19 +66,19 @@
 }
 
 .card {
-  background: linear-gradient(180deg, #121216 0%, #0a0a0c 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface-0) 100%);
+  border: 1px solid rgb(var(--white-rgb) / 0.05);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgb(var(--black-rgb) / 0.3);
   transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
   height: 100%;
 }
 
 .card:hover {
-  border-color: rgba(239, 68, 68, 0.3);
+  border-color: rgb(var(--red-500-rgb) / 0.3);
   transform: translateY(var(--hover-lift-lg));
 }
 
@@ -86,9 +86,9 @@
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3; 
-  background-color: #000000;
+  background-color: var(--black);
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.05);
 }
 
 .image {
@@ -104,8 +104,8 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1f1f25 0%, #121216 100%);
-  color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, var(--surface-4) 0%, var(--surface-2) 100%);
+  color: rgb(var(--white-rgb) / 0.3);
   font-weight: 600;
   font-size: 1.1rem;
   text-align: center;
@@ -121,7 +121,7 @@
 }
 
 .cardTitle {
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.15rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -130,12 +130,12 @@
 }
 
 .cardTitle strong {
-  color: #ef4444;
-  text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+  color: var(--red-500);
+  text-shadow: 0 0 10px rgb(var(--red-500-rgb) / 0.4);
 }
 
 .cardDesc {
-  color: #d1d5db;
+  color: var(--gray-300);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -152,7 +152,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  color: #d1d5db;
+  color: var(--gray-300);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -160,7 +160,7 @@
 .checkIcon {
   width: 20px;
   height: 20px;
-  color: #10b981;
+  color: var(--emerald-500);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -168,15 +168,15 @@
 .cardHorizontal {
   flex-direction: row;
   align-items: stretch;
-  border-left: 4px solid #ef4444;
-  box-shadow: -5px 0 20px rgba(239, 68, 68, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--red-500);
+  box-shadow: -5px 0 20px rgb(var(--red-500-rgb) / 0.15), 0 10px 30px rgb(var(--black-rgb) / 0.3);
 }
 
 .cardHorizontal .imageWrapper {
   width: 45%;
   aspect-ratio: auto;
   border-bottom: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgb(var(--white-rgb) / 0.05);
 }
 
 .cardHorizontal .cardContent {
@@ -206,8 +206,8 @@
   padding: 1.125rem 3rem;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--red-500) 0%, var(--red-800) 100%);
+  color: var(--white);
   font-size: 1.1rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -218,9 +218,9 @@
 }
 
 .ctaButton:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+  background: linear-gradient(135deg, var(--red-600) 0%, var(--red-900) 100%);
   transform: translateY(var(--hover-lift));
-  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+  box-shadow: 0 6px 25px rgb(var(--red-500-rgb) / 0.6);
 }
 
 @media (max-width: 1024px) {
@@ -240,8 +240,8 @@
 
   .cardHorizontal {
     flex-direction: column;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 4px solid #ef4444; 
+    border-left: 1px solid rgb(var(--white-rgb) / 0.05);
+    border-top: 4px solid var(--red-500); 
   }
 
   .cardHorizontal .cardContent {
@@ -252,6 +252,6 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgb(var(--white-rgb) / 0.05);
   }
 }

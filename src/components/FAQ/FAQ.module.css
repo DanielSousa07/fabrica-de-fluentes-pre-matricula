@@ -1,13 +1,13 @@
 .section {
   position: relative;
   width: 100%;
-  background-color: #ffffff; 
+  background-color: var(--white); 
   padding: 6rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #111827;
-  border-top: 1px solid #e5e7eb; 
+  color: var(--gray-900);
+  border-top: 1px solid var(--gray-200); 
 }
 
 .container {
@@ -27,12 +27,12 @@
 .title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #0a0a0c; 
+  color: var(--surface-0); 
   line-height: 1.2;
 }
 
 .highlight {
-  color: #ef4444; 
+  color: var(--red-500); 
 }
 
 .grid {
@@ -60,11 +60,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #000000; 
+  background-color: var(--black); 
   border: none;
   border-radius: 6px;
   padding: 1.25rem 1.5rem;
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.05rem;
   font-weight: 600;
   text-align: left;
@@ -74,13 +74,13 @@
 
 .questionBtn:hover {
   transform: translateY(var(--hover-lift));
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgb(var(--black-rgb) / 0.15);
 }
 
 .icon {
   width: 18px;
   height: 18px;
-  color: #ef4444; 
+  color: var(--red-500); 
   flex-shrink: 0;
   transition: transform 0.3s var(--ease-out);
 }
@@ -101,17 +101,17 @@
 
 .answerContent {
   padding: 0.5rem 1rem 1rem 1rem; 
-  color: #374151; 
+  color: var(--gray-700); 
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .answerContent strong {
-  color: #000000;
+  color: var(--black);
 }
 
 .answerContent em {
-  color: #ef4444;
+  color: var(--red-500);
   font-style: normal;
   font-weight: 600;
 }
@@ -126,32 +126,32 @@
 
 .ctaHelper {
   font-size: 1rem;
-  color: #374151;
+  color: var(--gray-700);
 }
 
 .ctaHelper strong {
-  color: #000000;
+  color: var(--black);
 }
 
 .ctaButton {
   padding: 1.125rem 3rem;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--red-500) 0%, var(--red-800) 100%);
+  color: var(--white);
   font-size: 1.1rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 20px rgb(var(--red-500-rgb) / 0.4);
   transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s var(--ease-out);
 }
 
 .ctaButton:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+  background: linear-gradient(135deg, var(--red-600) 0%, var(--red-900) 100%);
   transform: translateY(var(--hover-lift));
-  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+  box-shadow: 0 6px 25px rgb(var(--red-500-rgb) / 0.6);
 }
 
 @media (max-width: 968px) {

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: rgba(5, 5, 7, 0.75);
+  background: var(--overlay);
   backdrop-filter: blur(6px);
   animation: fadeIn 0.2s ease-out;
 }
@@ -17,11 +17,11 @@
   max-width: 420px;
   padding: 2.5rem 2rem 2rem;
   border-radius: 16px;
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  border: 1px solid rgb(var(--red-500-rgb) / 0.25);
   background:
-    radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.18) 0%, transparent 60%),
-    linear-gradient(180deg, #16161a 0%, #0d0d10 100%);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(220, 38, 38, 0.15);
+    radial-gradient(circle at 50% 0%, rgb(var(--red-600-rgb) / 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, var(--surface-3) 0%, var(--surface-1) 100%);
+  box-shadow: 0 25px 60px rgb(var(--black-rgb) / 0.6), 0 0 40px rgb(var(--red-600-rgb) / 0.15);
   text-align: center;
   animation: popIn 0.4s var(--ease-out);
 }
@@ -35,17 +35,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .iconSuccess {
-  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
-  box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.12), 0 0 30px rgba(34, 197, 94, 0.35);
+  background: linear-gradient(135deg, var(--green-500) 0%, var(--green-700) 100%);
+  box-shadow: 0 0 0 8px rgb(var(--green-500-rgb) / 0.12), 0 0 30px rgb(var(--green-500-rgb) / 0.35);
 }
 
 .iconError {
-  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
-  box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.12), 0 0 30px var(--red-glow);
+  background: linear-gradient(135deg, var(--red-700) 0%, var(--red-900) 100%);
+  box-shadow: 0 0 0 8px rgb(var(--red-600-rgb) / 0.12), 0 0 30px var(--red-glow);
 }
 
 .iconSuccess svg,
@@ -79,7 +79,7 @@
 }
 
 .highlight {
-  color: #ef4444;
+  color: var(--red-500);
   font-weight: 700;
 }
 
@@ -88,8 +88,8 @@
   padding: 1rem;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--red-700) 0%, var(--red-900) 100%);
+  color: var(--white);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -100,11 +100,11 @@
 
 .button:hover {
   transform: translateY(var(--hover-lift));
-  box-shadow: 0 6px 28px rgba(220, 38, 38, 0.55);
+  box-shadow: 0 6px 28px rgb(var(--red-600-rgb) / 0.55);
 }
 
 .button:focus-visible {
-  outline: 2px solid #ef4444;
+  outline: 2px solid var(--red-500);
   outline-offset: 3px;
 }
 
