@@ -79,6 +79,9 @@ export function ComparisonSection() {
                 type="text"
                 name="name"
                 placeholder="Digite seu primeiro nome"
+                aria-label="Primeiro nome"
+                autoComplete="given-name"
+                maxLength={60}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -88,17 +91,25 @@ export function ComparisonSection() {
                 type="email"
                 name="email"
                 placeholder="Digite seu melhor e-mail"
+                aria-label="E-mail"
+                autoComplete="email"
+                maxLength={120}
                 value={formData.email}
                 onChange={handleChange}
                 required
                 className={styles.input}
               />
               <div className={styles.phoneGroup}>
-                <span className={styles.countryCode}>🇧🇷 +55</span>
+                <span className={styles.countryCode}><span aria-hidden="true">🇧🇷</span> +55</span>
                 <input
                   type="tel"
                   name="phone"
                   placeholder="(11) 98765-4321"
+                  aria-label="Telefone com DDD"
+                  autoComplete="tel-national"
+                  inputMode="numeric"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                  title="Informe o DDD e o número, ex.: (11) 98765-4321"
                   value={formData.phone}
                   onChange={handleChange}
                   required

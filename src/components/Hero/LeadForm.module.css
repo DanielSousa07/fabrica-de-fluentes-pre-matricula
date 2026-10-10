@@ -24,7 +24,7 @@
   border: 1px solid #374151;
   background-color: #ffffff;
   color: #111827;
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -54,6 +54,7 @@
   background-color: #f3f4f6;
   color: #1f2937;
   font-size: 0.9rem;
+  white-space: nowrap;
   font-weight: 600;
   border-right: 1px solid #e5e7eb;
 }
@@ -63,7 +64,7 @@
   border-radius: 0;
   width: 100%;
   padding: 0.85rem 1rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
 }
 
