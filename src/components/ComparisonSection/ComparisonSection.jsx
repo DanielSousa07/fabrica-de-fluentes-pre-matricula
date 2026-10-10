@@ -1,29 +1,10 @@
-import { useState } from 'react';
-import { sendLead } from '../../services/sendLead';
+import { useLeadForm } from '../../hooks/useLeadForm';
+import { FeedbackModal } from '../ui/FeedbackModal';
 import styles from './ComparisonSection.module.css';
 
 export function ComparisonSection() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
-  const [isSending, setIsSending] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSending(true);
-    try {
-      await sendLead(formData, 'Formulário de pré-matrícula');
-      alert('Vaga garantida com sucesso!');
-      setFormData({ name: '', email: '', phone: '' });
-    } catch {
-      alert('Não foi possível enviar. Tente novamente em instantes.');
-    } finally {
-      setIsSending(false);
-    }
-  };
+  const { formData, isSending, feedback, handleChange, handleSubmit, closeFeedback } =
+    useLeadForm('Formulário de pré-matrícula');
 
   return (
     <section className={styles.section}>
@@ -128,6 +109,8 @@ export function ComparisonSection() {
                 {isSending ? 'ENVIANDO...' : 'GARANTIR VAGA'}
               </button>
             </form>
+
+            <FeedbackModal feedback={feedback} successTitle="Vaga garantida!" onClose={closeFeedback} />
           </div>
         </div>
 

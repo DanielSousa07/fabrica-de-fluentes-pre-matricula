@@ -1,29 +1,10 @@
-import { useState } from 'react';
-import { sendLead } from '../../services/sendLead';
+import { useLeadForm } from '../../hooks/useLeadForm';
+import { FeedbackModal } from '../ui/FeedbackModal';
 import styles from './LeadForm.module.css';
 
 export function LeadForm({ onSubmit }) {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
-  const [isSending, setIsSending] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSending(true);
-    try {
-      await sendLead(formData, 'Formulário do topo');
-      alert('Oferta solicitada com sucesso!');
-      setFormData({ name: '', email: '', phone: '' });
-    } catch {
-      alert('Não foi possível enviar. Tente novamente em instantes.');
-    } finally {
-      setIsSending(false);
-    }
-  };
+  const { formData, isSending, feedback, handleChange, handleSubmit, closeFeedback } =
+    useLeadForm('Formulário do topo');
 
   return (
     <div className={styles.formContainer}>
@@ -54,6 +35,8 @@ export function LeadForm({ onSubmit }) {
           {isSending ? 'ENVIANDO...' : 'DESBLOQUEAR OFERTA'}
         </button>
       </form>
+
+      <FeedbackModal feedback={feedback} successTitle="Oferta solicitada!" onClose={closeFeedback} />
     </div>
   );
 }
