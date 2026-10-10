@@ -1,17 +1,28 @@
 import { useState } from 'react';
+import { sendLead } from '../../services/sendLead';
 import styles from './ComparisonSection.module.css';
 
 export function ComparisonSection() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Vaga garantida com sucesso!');
+    setIsSending(true);
+    try {
+      await sendLead(formData, 'Formulário de pré-matrícula');
+      alert('Vaga garantida com sucesso!');
+      setFormData({ name: '', email: '', phone: '' });
+    } catch {
+      alert('Não foi possível enviar. Tente novamente em instantes.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -113,8 +124,8 @@ export function ComparisonSection() {
                   className={styles.phoneInput}
                 />
               </div>
-              <button type="submit" className={styles.ctaButton}>
-                GARANTIR VAGA
+              <button type="submit" className={styles.ctaButton} disabled={isSending}>
+                {isSending ? 'ENVIANDO...' : 'GARANTIR VAGA'}
               </button>
             </form>
           </div>

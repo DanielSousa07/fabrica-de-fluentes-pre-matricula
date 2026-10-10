@@ -1,17 +1,28 @@
 import { useState } from 'react';
+import { sendLead } from '../../services/sendLead';
 import styles from './LeadForm.module.css';
 
 export function LeadForm({ onSubmit }) {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Oferta solicitada com sucesso!');
+    setIsSending(true);
+    try {
+      await sendLead(formData, 'Formulário do topo');
+      alert('Oferta solicitada com sucesso!');
+      setFormData({ name: '', email: '', phone: '' });
+    } catch {
+      alert('Não foi possível enviar. Tente novamente em instantes.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -39,8 +50,8 @@ export function LeadForm({ onSubmit }) {
             className={styles.phoneInput}
           />
         </div>
-        <button type="submit" className={styles.ctaButton}>
-          DESBLOQUEAR OFERTA
+        <button type="submit" className={styles.ctaButton} disabled={isSending}>
+          {isSending ? 'ENVIANDO...' : 'DESBLOQUEAR OFERTA'}
         </button>
       </form>
     </div>
