@@ -16,6 +16,8 @@ export function OfferDetails() {
           src={item.image} 
           alt={item.title.replace(/<[^>]+>/g, '')}
           className={styles.image}
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.target.style.display = 'none';
             e.target.nextSibling.style.display = 'flex';

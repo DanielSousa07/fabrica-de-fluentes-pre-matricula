@@ -1,9 +1,9 @@
-import imgConversacao from '../../assets/offer-details/offer-conversacao.png';
-import imgCurso from '../../assets/offer-details/offer-curso.png';
-import imgMaterial from '../../assets/offer-details/offer-material.png';
-import imgSilver from '../../assets/offer-details/offer-silver.png';
-import imgComunidade from '../../assets/offer-details/offer-comunidade.png'; 
-import imgBonus from '../../assets/offer-details/offer-bonus.png';
+import imgConversacao from '../../assets/offer-details/offer-conversacao.webp';
+import imgCurso from '../../assets/offer-details/offer-curso.webp';
+import imgMaterial from '../../assets/offer-details/offer-material.webp';
+import imgSilver from '../../assets/offer-details/offer-silver.webp';
+import imgComunidade from '../../assets/offer-details/offer-comunidade.webp'; 
+import imgBonus from '../../assets/offer-details/offer-bonus.webp';
 
 export const offerData = {
   topRow: [

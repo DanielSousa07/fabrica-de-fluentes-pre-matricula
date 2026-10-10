@@ -1,8 +1,8 @@
-import juliaImg from '../../assets/testimonials/julia.png';
-import carlosImg from '../../assets/testimonials/carlos.png';
-import cristianeImg from '../../assets/testimonials/cristiane.png';
-import laviniaImg from '../../assets/testimonials/lavinia.png';
-import lydiaImg from '../../assets/testimonials/lydia.png';
+import juliaImg from '../../assets/testimonials/julia.webp';
+import carlosImg from '../../assets/testimonials/carlos.webp';
+import cristianeImg from '../../assets/testimonials/cristiane.webp';
+import laviniaImg from '../../assets/testimonials/lavinia.webp';
+import lydiaImg from '../../assets/testimonials/lydia.webp';
 
 export const testimonialData = [
   {

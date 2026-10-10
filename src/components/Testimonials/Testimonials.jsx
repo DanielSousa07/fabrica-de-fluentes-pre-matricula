@@ -82,7 +82,15 @@ function TestimonialCard({ item }) {
           
           <div className={styles.mediaContainer}>
             <div className={styles.videoWrapper}>
-              <img src={item.image} alt={item.name} className={styles.thumbnail} />
+              <img
+                src={item.image}
+                alt={item.name}
+                className={styles.thumbnail}
+                width="120"
+                height="230"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
 
             <div className={styles.centerPlayButton}>

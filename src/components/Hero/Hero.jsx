@@ -1,7 +1,7 @@
 import { BenefitList } from './BenefitList';
 import { LeadForm } from './LeadForm';
-import heroBg from '../../assets/hero-person.jpg';
-import heroMobileBg from '../../assets/hero-mobile.jpg';
+import heroBg from '../../assets/hero-person.webp';
+import heroMobileBg from '../../assets/hero-mobile.webp';
 import styles from './Hero.module.css';
 
 export function Hero() {
