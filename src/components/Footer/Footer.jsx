@@ -16,11 +16,14 @@ export function Footer() {
         </div>
 
         <div className={styles.info}>
-          <span><strong>CNPJ:</strong> 00.000.000/0001-00</span>
-          <span className={styles.separator}>|</span>
-          <span><strong>Whatsapp:</strong> (11) 99999-9999</span>
-          <span className={styles.separator}>|</span>
-          <span>suporte@fabricadefluentes.com.br</span>
+          <span>
+            <strong>WhatsApp:</strong>{' '}
+            <a href="https://wa.me/5586988087216" target="_blank" rel="noopener noreferrer">
+              (86) 98808-7216
+            </a>
+          </span>
+          <span className={styles.separator} aria-hidden="true">|</span>
+          <a href="mailto:felipemacedo3000@gmail.com">felipemacedo3000@gmail.com</a>
         </div>
 
         <div className={styles.developedBy}>

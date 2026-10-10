@@ -46,6 +46,18 @@
   font-weight: 700;
 }
 
+.info a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--white-rgb) / 0.25);
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease-out);
+}
+
+.info a:hover {
+  color: var(--red-500);
+}
+
 .separator {
   color: var(--gray-600); 
   margin: 0 0.25rem;
