@@ -1,4 +1,5 @@
 import { offerData } from './offerData';
+import logoImg from '../../assets/logo-fabrica-de-fluentes.webp';
 import styles from './OfferDetails.module.css';
 import { scrollToLeadForm } from '../../utils/scrollToLeadForm';
 
@@ -54,7 +55,15 @@ export function OfferDetails() {
       <div className={styles.container}>
         
         <div className={styles.header}>
-          <img src="/LogoScholl.png" alt="Logo" className={styles.smallLogo} onError={(e) => e.target.style.display='none'} />
+          <img
+            src={logoImg}
+            alt="Fábrica de Fluentes"
+            className={styles.smallLogo}
+            width="62"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
           <h2 className={styles.title}>
             Tudo o que você vai receber nesta <span className={styles.highlight}>Oferta especial do Curso completo de Inglês da Fábrica de Fluentes:</span>
           </h2>
