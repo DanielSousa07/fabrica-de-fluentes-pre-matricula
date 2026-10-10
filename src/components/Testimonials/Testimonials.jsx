@@ -69,22 +69,27 @@ function TestimonialCard({ item }) {
       ) : (
         <>
           <div className={styles.cardContent}>
-            <span className={styles.quoteIcon}>❝</span>
+            <span className={styles.quoteIcon} aria-hidden="true">❝</span>
             <p 
               className={styles.cardText} 
               dangerouslySetInnerHTML={{ __html: item.text }} 
             />
             <div className={styles.authorBox}>
-              <span className={styles.authorStar}>✦</span>
+              <span className={styles.authorStar} aria-hidden="true">✦</span>
               {item.name}
             </div>
           </div>
           
-          <div className={styles.mediaContainer}>
+          <button
+            type="button"
+            className={styles.mediaContainer}
+            onClick={() => setIsPlaying(true)}
+            aria-label={`Assistir depoimento de ${item.name}`}
+          >
             <div className={styles.videoWrapper}>
               <img
                 src={item.image}
-                alt={item.name}
+                alt=""
                 className={styles.thumbnail}
                 width="120"
                 height="230"
@@ -94,11 +99,11 @@ function TestimonialCard({ item }) {
             </div>
 
             <div className={styles.centerPlayButton}>
-              <svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
+              <svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M5 3l14 9-14 9V3z" />
               </svg>
             </div>
-          </div>
+          </button>
         </>
       )}
     </div>
