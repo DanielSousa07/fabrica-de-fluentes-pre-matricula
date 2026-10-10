@@ -73,13 +73,13 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
   height: 100%;
 }
 
 .card:hover {
   border-color: rgba(239, 68, 68, 0.3);
-  transform: translateY(-5px);
+  transform: translateY(var(--hover-lift-lg));
 }
 
 .imageWrapper {
@@ -214,12 +214,12 @@
   letter-spacing: 0.05em;
   cursor: pointer;
   box-shadow: 0 4px 20px var(--red-glow);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s var(--ease-out);
 }
 
 .ctaButton:hover {
   background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
-  transform: translateY(-2px);
+  transform: translateY(var(--hover-lift));
   box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
 }
 

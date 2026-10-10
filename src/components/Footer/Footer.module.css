@@ -21,7 +21,7 @@
   color: #ffffff;
   font-weight: 700;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s var(--ease-out);
 }
 
 .links a:hover {

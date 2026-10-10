@@ -26,7 +26,7 @@
   color: #111827;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 
 .input:focus {
@@ -81,11 +81,11 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   box-shadow: 0 4px 20px var(--red-glow);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s var(--ease-out);
 }
 
 .ctaButton:hover {
   background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-  transform: translateY(-2px);
+  transform: translateY(var(--hover-lift));
   box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6);
 }

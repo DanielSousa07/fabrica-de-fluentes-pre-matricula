@@ -4,6 +4,25 @@
   --text-muted: #9ca3af;
   --red-primary: #b91c1c;
   --red-glow: rgba(220, 38, 38, 0.4);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --hover-lift: -2px;
+  --hover-lift-lg: -5px;
+  --hover-zoom: 1.05;
+  --hover-zoom-lg: 1.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hover-lift: 0px;
+    --hover-lift-lg: 0px;
+    --hover-zoom: 1;
+    --hover-zoom-lg: 1;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 * {

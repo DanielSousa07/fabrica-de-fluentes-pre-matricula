@@ -92,14 +92,14 @@
    padding: 1.5rem;
    gap: 1.5rem;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-   transition: transform 0.2s ease, border-color 0.2s ease;
+   transition: transform 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
    min-height: 260px;
    cursor: pointer;
 }
 
 .card:hover {
    border-color: rgba(239, 68, 68, 0.4);
-   transform: translateY(-3px);
+   transform: translateY(var(--hover-lift));
 }
 
 .cardContent {
@@ -186,11 +186,11 @@
    width: 100%;
    height: 100%;
    object-fit: cover;
-   transition: transform 0.3s ease;
+   transition: transform 0.3s var(--ease-out);
 }
 
 .card:hover .thumbnail {
-   transform: scale(1.05);
+   transform: scale(var(--hover-zoom));
 }
 
 .centerPlayButton {
@@ -209,11 +209,11 @@
    height: 55px;
    color: rgba(255, 255, 255, 0.9);
    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
-   transition: transform 0.2s ease, color 0.2s ease;
+   transition: transform 0.2s var(--ease-out), color 0.2s var(--ease-out);
 }
 
 .card:hover .playIcon {
-   transform: scale(1.1);
+   transform: scale(var(--hover-zoom-lg));
    color: #ffffff;
 }
 
@@ -260,12 +260,12 @@
    letter-spacing: 0.05em;
    cursor: pointer;
    box-shadow: 0 4px 20px var(--red-glow);
-   transition: all 0.2s ease-in-out;
+   transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s var(--ease-out);
 }
 
 .ctaButton:hover {
    background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
-   transform: translateY(-2px);
+   transform: translateY(var(--hover-lift));
    box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
 }
 
