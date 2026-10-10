@@ -135,7 +135,7 @@
 
   .imageBackground {
     width: 100%;
-    min-height: 320px; 
+    min-height: 380px; 
     background-size: contain; 
     margin-top: -1.5rem; 
   }

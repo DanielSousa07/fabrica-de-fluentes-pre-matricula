@@ -1,5 +1,5 @@
 import styles from './Instructor.module.css';
-import instructorImg from '../../assets/instructor-person.png';
+import instructorImg from '../../assets/instructor-hero.webp';
 
 export function Instructor() {
   return (
