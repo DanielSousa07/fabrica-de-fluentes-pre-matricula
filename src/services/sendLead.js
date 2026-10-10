@@ -15,5 +15,8 @@ export async function sendLead({ name, email, phone }, origem) {
     }),
   });
 
-  if (!response.ok) throw new Error('Falha ao enviar formulário');
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || String(data.success) !== 'true') {
+    throw new Error(data.message || 'Falha ao enviar formulário');
+  }
 }
