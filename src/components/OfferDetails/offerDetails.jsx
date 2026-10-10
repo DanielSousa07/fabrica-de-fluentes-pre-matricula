@@ -1,5 +1,6 @@
 import { offerData } from './offerData';
 import styles from './OfferDetails.module.css';
+import { scrollToLeadForm } from '../../utils/scrollToLeadForm';
 
 const CheckIcon = () => (
   <svg className={styles.checkIcon} viewBox="0 0 20 20" fill="currentColor">
@@ -73,7 +74,7 @@ export function OfferDetails() {
           <p className={styles.ctaHelper}>Toque no botão abaixo para fazer sua pré-matrícula</p>
           <button 
             className={styles.ctaButton}
-            onClick={() => alert('Redirecionando para a pré-matrícula!')}
+            onClick={scrollToLeadForm}
           >
             FAZER PRÉ-MATRÍCULA
           </button>

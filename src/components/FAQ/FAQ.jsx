@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { faqData } from './faqData';
 import styles from './FAQ.module.css';
+import { scrollToLeadForm } from '../../utils/scrollToLeadForm';
 
 const CaretIcon = ({ isOpen }) => (
   <svg 
@@ -80,7 +81,7 @@ export function FAQ() {
           </p>
           <button 
             className={styles.ctaButton}
-            onClick={() => alert('Redirecionando para a pré-matrícula!')}
+            onClick={scrollToLeadForm}
           >
             FAZER PRÉ-MATRÍCULA
           </button>

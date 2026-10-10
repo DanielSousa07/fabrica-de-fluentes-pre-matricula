@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { testimonialData } from './testimonialData';
 import styles from './Testimonials.module.css';
+import { scrollToLeadForm } from '../../utils/scrollToLeadForm';
 
 export function Testimonials() {
   const topRow = testimonialData.slice(0, 3);
@@ -40,7 +41,7 @@ export function Testimonials() {
           <p className={styles.ctaHelper}>Toque no botão abaixo para fazer sua pré-matrícula</p>
           <button 
             className={styles.ctaButton}
-            onClick={() => alert('Redirecionando para a pré-matrícula!')}
+            onClick={scrollToLeadForm}
           >
             DESBLOQUEAR OFERTAS SECRETAS
           </button>

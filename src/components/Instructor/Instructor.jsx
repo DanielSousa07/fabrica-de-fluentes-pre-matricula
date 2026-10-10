@@ -1,5 +1,6 @@
 import styles from './Instructor.module.css';
 import instructorImg from '../../assets/instructor-hero.webp';
+import { scrollToLeadForm } from '../../utils/scrollToLeadForm';
 
 export function Instructor() {
   return (
@@ -26,7 +27,7 @@ export function Instructor() {
           <div className={styles.ctaWrapper}>
             <button 
               className={styles.ctaButton}
-              onClick={() => alert('Redirecionando para as ofertas secretas!')}
+              onClick={scrollToLeadForm}
             >
               DESBLOQUEAR OFERTAS SECRETAS
             </button>

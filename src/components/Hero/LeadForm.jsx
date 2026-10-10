@@ -1,5 +1,6 @@
 import { useLeadForm } from '../../hooks/useLeadForm';
 import { FeedbackModal } from '../ui/FeedbackModal';
+import { LEAD_FORM_ID } from '../../utils/scrollToLeadForm';
 import styles from './LeadForm.module.css';
 
 export function LeadForm({ onSubmit }) {
@@ -12,7 +13,7 @@ export function LeadForm({ onSubmit }) {
         ↓ Preencha aqui para desbloquear sua oferta ↓
       </p>
 
-      <form onSubmit={handleSubmit} className={styles.leadForm}>
+      <form id={LEAD_FORM_ID} onSubmit={handleSubmit} className={styles.leadForm}>
         <input
           type="text" name="name" placeholder="Digite seu primeiro nome"
           value={formData.name} onChange={handleChange} required
